@@ -6,3 +6,6 @@ Several Openhab widgets
 
 - Netatmo rain sensor
 	- Shows 1 hour, 24 hour, RF signal and battery values.
+
+- Temperature sensor
+	- Shows temperature, pressure, humidity and battery values.
