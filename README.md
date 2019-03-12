@@ -9,3 +9,6 @@ Several Openhab widgets
 
 - Temperature sensor
 	- Shows temperature, pressure, humidity and battery values.
+
+- Nest thermostat
+	- Widget for the Nest Thermostat with knob feature. Shows temperature, setpoint, humidity, mode.
