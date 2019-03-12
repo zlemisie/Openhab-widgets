@@ -1,7 +1,7 @@
 # Openhab-widgets
 Several Openhab widgets
 
-- Netatmo temperature sensors
+- Netatmo main unit
 	- Shows the pressure, humidity, noise, carbondioxide, temperature, min. temperature, max. temperature and trend of the Netatmo sensor.
 
 - Netatmo rain sensor
