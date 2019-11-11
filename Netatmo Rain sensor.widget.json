@@ -1,0 +1,35 @@
+{
+    "template": "<style>\n\n  .rain_signal {\n  \tposition:absolute;\n  \ttop:5px;\n  \tleft:10px;  \n  }\n  \n  .rain_battery_item {\n  \tposition:absolute;\n  \ttop:5px;\n  \tright:10px;  \n  }\n  \n  .rain_1h {\n  \tposition:absolute;\n  \ttop:30px;\n  \tleft:10px;\n  }\n\n  .rain_24h {\n  \tposition:absolute;\n  \ttop:60px;\n  \tleft:10px;\n  }\n</style>\n\n<div class=\"netatmo\">\n  <div class=\"rain_1h\">\n    <img src=\"../static/images/netatmo/raingauge/icon-rain-2.png\" width=\"20\" />\n    <span ng-if=\"itemValue(config.rain_1h)!='UNDEF'\">{{'%.1f' | sprintf:itemValue(config.rain_1h).split(' ')[0]}}<sup style=\"color:#aaa; font-size:10px;\">mm/h</sup></span>\n    <span ng-if=\"itemValue(config.rain_1h)=='UNDEF'\">NAN <sup style=\"color:#aaa; font-size:10px;\">mm/h</sup></span>\n  </div>\n  <div class=\"rain_24h\">\n    <img src=\"../static/images/netatmo/raingauge/last_day.png\" width=\"20\" />\n    <span ng-if=\"itemValue(config.rain_1h)!='UNDEF'\">{{'%.1f' | sprintf:itemValue(config.rain_24h).split(' ')[0] + sprintf:itemValue(config.rain).split(' ')[0]}}<sup style=\"color:#aaa; font-size:10px;\">mm</sup></span>\n    <span ng-if=\"itemValue(config.rain_1h)=='UNDEF'\">NAN <sup style=\"color:#aaa; font-size:10px;\">mm</sup></span>\n  </div>\n</div>\n\n<div class='rain_battery_item'>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=95\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-100'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=85 && itemValue(config.measure_battery)*100<95\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-90'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=75 && itemValue(config.measure_battery)*100<85\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-80'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=65 && itemValue(config.measure_battery)*100<75\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-70'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=55 && itemValue(config.measure_battery)*100<65\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-60'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=45 && itemValue(config.measure_battery)*100<55\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-50'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=35 && itemValue(config.measure_battery)*100<45\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-40'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=25 && itemValue(config.measure_battery)*100<35\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-30'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100>=15 && itemValue(config.measure_battery)*100<25\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-20'\" size=\"15\"/>\n  </div>\n  <div ng-if=\"itemValue(config.measure_battery)*100<15\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'battery-10'\" size=\"15\"/>\n  </div>\n</div>\n\n<div class=\"rain_signal\">\n  <div ng-if=\"itemValue(config.signal)>=4\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'qualityofservice-4'\" size=\"12\"/>\n  </div>\n  <div ng-if=\"itemValue(config.signal)==3\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'qualityofservice-3'\" size=\"12\"/>\n  </div>\n  <div ng-if=\"itemValue(config.signal)==2\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'qualityofservice-2'\" size=\"12\"/>\n  </div>\n  <div ng-if=\"itemValue(config.signal)==1\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'qualityofservice-1'\" size=\"12\"/>\n  </div>\n  <div ng-if=\"itemValue(config.signal)<1\">\n    <widget-icon iconset=\"'eclipse-smarthome-classic'\" icon=\"'qualityofservice-0'\" size=\"12\"/>\n  </div>\n</div>\n",
+    "name": "Netatmo Rain sensor",
+    "author": "Marcel Wolf",
+    "description": "Netatmo rain sensor. Shows 1 hour, 24 hour, RF signal and battery",
+    "settings": [
+        {
+            "type": "item",
+            "id": "rain",
+            "label": "Rain"
+        },
+        {
+            "type": "item",
+            "id": "rain_1h",
+            "label": "rain 1h"
+        },
+        {
+            "type": "item",
+            "id": "rain_24h",
+            "label": "Rain 24h"
+        },
+        {
+            "type": "item",
+            "id": "measure_battery",
+            "label": "Battery"
+        },
+        {
+            "type": "item",
+            "id": "signal",
+            "label": "RF Signal"
+        }
+    ],
+    "source_url": "https://raw.githubusercontent.com/marcelwolf/Openhab-widgets/master/Netatmo%20Rain%20sensor.widget.json",
+    "readme_url": "https://github.com/marcelwolf/Openhab-widgets"
+}
